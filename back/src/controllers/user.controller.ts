@@ -30,7 +30,7 @@ const getUserByIdController = async (
   _req: Request,
   res: Response
 ): Promise<Response> => {
-  const user: IUserResp = await getUserbyIdService("1");
+  const user: IUserResp = await getUserbyIdService(res.locals.decoded.sub);
 
   return res.status(200).json(user);
 };
@@ -39,7 +39,7 @@ const updateUserController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const user = await updateUserService("1", req.body);
+  const user = await updateUserService(res.locals.decoded.sub, req.body);
 
   return res.status(200).json(user);
 };
@@ -48,7 +48,7 @@ const deleteUserController = async (
   _req: Request,
   res: Response
 ): Promise<Response> => {
-  await deleteUserService("1");
+  await deleteUserService(res.locals.decoded.sub);
 
   return res.status(204).json();
 };
