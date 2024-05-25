@@ -65,7 +65,7 @@ export const doesUserHavePermission = async (
   res: Response,
   next: NextFunction
 ): Promise<void> => {
-  const userLoggedId = res.locals.decoded.userId;
+  const userLoggedId = res.locals.decoded.sub;
   const userIdUrl = req.params.userId;
 
   if (userLoggedId !== userIdUrl) {
