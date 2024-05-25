@@ -12,6 +12,7 @@ import {
   getAllAddressesController,
   updateAddressController,
 } from "../controllers/addresses.controller";
+import { doesAddressExist } from "../middlewares/addresses.middleware";
 
 export const addressRouter: Router = Router();
 
@@ -24,13 +25,24 @@ addressRouter.post(
 
 addressRouter.get("/", isUserLogged, getAllAddressesController);
 
-addressRouter.get("/:addressId", isUserLogged, getAddressByIdController);
+addressRouter.get(
+  "/:addressId",
+  isUserLogged,
+  doesAddressExist,
+  getAddressByIdController
+);
 
 addressRouter.patch(
   "/:addressId",
   isUserLogged,
+  doesAddressExist,
   validateBody(addressUpdateSchema),
   updateAddressController
 );
 
-addressRouter.delete("/:addressId", isUserLogged, deleteAddressController);
+addressRouter.delete(
+  "/:addressId",
+  isUserLogged,
+  doesAddressExist,
+  deleteAddressController
+);
