@@ -19,7 +19,7 @@ const createAddressService = async (
   return addressSchema.parse(address);
 };
 
-const getAllContactService = async (
+const getAllAddressesService = async (
   userId: string
 ): Promise<IAllAddressesResp> => {
   const addresses: Address[] = await prisma.address.findMany({
@@ -57,7 +57,7 @@ const deleteAddressService = async (addressId: string): Promise<void> => {
 
 export {
   createAddressService,
-  getAllContactService,
+  getAllAddressesService,
   getAddressByIdService,
   updateAddressService,
   deleteAddressService,
