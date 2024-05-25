@@ -5,7 +5,7 @@ import {
   getAllUsersController,
   getUserByIdController,
   updateUserController,
-} from "../controllers/user.controller";
+} from "../controllers/users.controller";
 import { validateBody } from "../middlewares/globals.middleware";
 import { userReqSchema, userUpdateSchema } from "../schemas/user.schema";
 import {
