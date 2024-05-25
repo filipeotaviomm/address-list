@@ -16,7 +16,7 @@ export const isUserNameUnique = async (
   });
 
   if (userName) {
-    throw new AppError("This username already exists");
+    throw new AppError("This username already exists", 409);
   }
 
   return next();
@@ -36,6 +36,8 @@ export const doesUserExist = async (
   }
 
   res.locals.user = user;
+
+  return next();
 };
 
 export const isUserLogged = (
@@ -46,7 +48,7 @@ export const isUserLogged = (
   const authorization: string | undefined = req.headers.authorization;
 
   if (!authorization) {
-    throw new AppError("Missing bearer token");
+    throw new AppError("Missing bearer token", 401);
   }
 
   const token = authorization.split(" ")[1];
@@ -67,7 +69,7 @@ export const doesUserHavePermission = async (
   const userIdUrl = req.params.userId;
 
   if (userLoggedId !== userIdUrl) {
-    throw new AppError("You do not have permission");
+    throw new AppError("You do not have permission", 403);
   }
 
   return next();
