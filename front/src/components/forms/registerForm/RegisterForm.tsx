@@ -5,9 +5,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../input/Input";
 import { InputPassword } from "../inputPassword/InputPassword";
 import { ImSpinner3 } from "react-icons/im";
+import { useUserContext } from "../../../hooks/useUserContext";
 
 const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
+  const { userRegister } = useUserContext();
 
   const {
     register,
@@ -17,7 +19,9 @@ const RegisterForm = () => {
   } = useForm<IRegisterFormValues>({
     resolver: zodResolver(registerFormSchema),
   });
-  const registration = (formData: IRegisterFormValues) => {};
+  const registration = (formData: IRegisterFormValues) => {
+    userRegister(formData, setLoading, reset);
+  };
 
   return (
     <form onSubmit={handleSubmit(registration)}>
