@@ -5,8 +5,12 @@ import { Input } from "../input/Input";
 import { InputPassword } from "../inputPassword/InputPassword";
 import { useState } from "react";
 import { ImSpinner3 } from "react-icons/im";
+import { useUserContext } from "../../../hooks/useUserContext";
 
 const LoginForm = () => {
+  const [loading, setLoading] = useState(false);
+  const { userLogin } = useUserContext();
+
   const {
     register,
     handleSubmit,
@@ -14,10 +18,12 @@ const LoginForm = () => {
     reset,
   } = useForm<ILoginFormValues>({ resolver: zodResolver(loginFormSchema) });
 
-  const [loading, setLoading] = useState(false);
+  const login = (formData: ILoginFormValues) => {
+    userLogin(formData, setLoading, reset);
+  };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit(login)}>
       <Input
         label="Username"
         id="userName"
