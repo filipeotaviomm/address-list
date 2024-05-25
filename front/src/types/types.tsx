@@ -8,3 +8,11 @@ export interface IInputProps
   id?: string;
   readOnly?: boolean;
 }
+
+export interface IChildren {
+  children: ReactNode;
+}
+
+export interface IUserContext {}
+
+export interface IAddressContext {}
