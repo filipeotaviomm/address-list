@@ -20,6 +20,7 @@ const LoginForm = () => {
     <form>
       <Input
         label="Username"
+        id="userName"
         placeholder="Digite seu username"
         {...register("userName")}
         error={errors.userName}
