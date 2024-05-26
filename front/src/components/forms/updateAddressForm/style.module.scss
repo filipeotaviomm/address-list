@@ -1,0 +1,60 @@
+.create_form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  gap: 15px;
+  width: 100%;
+
+  & > .both_sides {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    & > .left_side {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 50%;
+    }
+
+    & > .right_side {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 50%;
+    }
+  }
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  width: 100%;
+  border: 2px solid var(--color-purple);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.div_btn_create {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  & > .btn_create {
+    width: 50%;
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    border: 2px solid var(--color-purple);
+    border-radius: 5px;
+    padding: 10px;
+
+    &:hover {
+      border: 2px solid var(--color-purple);
+      background-color: var(--color-purple2);
+    }
+  }
+}

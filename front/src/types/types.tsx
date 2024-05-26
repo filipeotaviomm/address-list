@@ -70,6 +70,22 @@ export interface IAddressContext {
     setLoading: React.Dispatch<React.SetStateAction<boolean>>,
     reset: () => void
   ) => Promise<void>;
+
+  editingAddress: IAddress;
+  setEditingAddress: React.Dispatch<React.SetStateAction<IAddress>>;
+
+  updateAddress: (
+    formData: ICreateAddressFormValues,
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) => Promise<void>;
+
+  confirmDeleteAddress: IAddress;
+  setConfirmDeleteAddress: React.Dispatch<React.SetStateAction<IAddress>>;
+
+  deleteAddress: (
+    removedId: string,
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) => Promise<void>;
 }
 
 export interface IAddress {
