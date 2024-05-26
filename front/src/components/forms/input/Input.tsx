@@ -1,7 +1,7 @@
 import { ForwardedRef, forwardRef } from "react";
 import { IInputProps } from "../../../types/types";
 
-export const Input = forwardRef(
+const Input = forwardRef(
   (
     { error, label, id, readOnly, ...rest }: IInputProps,
     ref: ForwardedRef<HTMLInputElement>
@@ -15,3 +15,5 @@ export const Input = forwardRef(
     );
   }
 );
+
+export { Input };

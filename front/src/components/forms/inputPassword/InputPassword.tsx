@@ -2,7 +2,7 @@ import { useState, forwardRef, ForwardedRef } from "react";
 import { MdVisibilityOff, MdVisibility } from "react-icons/md";
 import { IInputProps } from "../../../types/types";
 
-export const InputPassword = forwardRef(
+const InputPassword = forwardRef(
   (
     { error, label, id, readOnly, ...rest }: IInputProps,
     ref: ForwardedRef<HTMLInputElement>
@@ -19,9 +19,13 @@ export const InputPassword = forwardRef(
           ref={ref}
           {...rest}
         />
-        <button>{isHidden ? <MdVisibilityOff /> : <MdVisibility />}</button>
+        <button type="button" onClick={() => setIsHidden(!isHidden)}>
+          {isHidden ? <MdVisibilityOff /> : <MdVisibility />}
+        </button>
         {error ? <p>{error.message}</p> : null}
       </div>
     );
   }
 );
+
+export { InputPassword };

@@ -40,7 +40,9 @@ const LoginForm = () => {
         error={errors.password}
         disabled={loading}
       />
-      <button disabled={loading}>{loading ? <ImSpinner3 /> : "Entrar"}</button>
+      <button type="submit" disabled={loading}>
+        {loading ? <ImSpinner3 /> : "Entrar"}
+      </button>
     </form>
   );
 };

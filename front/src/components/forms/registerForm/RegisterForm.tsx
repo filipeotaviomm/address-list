@@ -27,6 +27,7 @@ const RegisterForm = () => {
     <form onSubmit={handleSubmit(registration)}>
       <Input
         label="Nome"
+        type="text"
         id="name"
         placeholder="Digite seu nome"
         {...register("name")}
@@ -35,6 +36,7 @@ const RegisterForm = () => {
       />
       <Input
         label="Username"
+        type="text"
         id="userName"
         placeholder="Digite seu Username"
         {...register("userName")}

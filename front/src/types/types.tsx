@@ -15,6 +15,12 @@ export interface IChildren {
   children: ReactNode;
 }
 
+export interface IUser {
+  id: string;
+  name: string;
+  userName: string;
+}
+
 export interface IUserContext {
   userRegister: (
     formData: IRegisterFormValues,
@@ -27,6 +33,26 @@ export interface IUserContext {
     setLoading: React.Dispatch<React.SetStateAction<boolean>>,
     reset: () => void
   ) => Promise<void>;
+
+  user: IUser;
+  setUser: React.Dispatch<React.SetStateAction<IUser>>;
+
+  updateUser: (
+    formData: ILoginFormValues, //tem que mudar
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) => Promise<void>;
+
+  isUpdateUserModalOpen: boolean;
+  setIsUpdateUserModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+
+  deleteUser: (
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) => Promise<void>;
+
+  confirmDeleteUser: boolean;
+  setConfirmDeleteUser: React.Dispatch<React.SetStateAction<boolean>>;
+
+  isUserLogged: boolean;
 }
 
 export interface IAddressContext {}
