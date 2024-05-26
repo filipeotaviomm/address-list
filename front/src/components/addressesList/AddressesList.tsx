@@ -5,14 +5,14 @@ import styles from "./style.module.scss";
 import { CiCirclePlus } from "react-icons/ci";
 
 const AddressesList = () => {
-  const { addressesList } = useAddressContext();
+  const { addressesList, setCreateAddressModalIsVisible } = useAddressContext();
   return (
     <div className={styles.cards_list}>
       <div className={styles.title_list}>
         <h1>Lista de Endereços:</h1>
       </div>
       <div className={styles.plus_button}>
-        <button>
+        <button onClick={() => setCreateAddressModalIsVisible(true)}>
           <p className="p2 lg">Criar Endereço</p>
           <CiCirclePlus size={30} />
         </button>
