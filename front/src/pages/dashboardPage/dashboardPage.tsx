@@ -1,3 +1,4 @@
+import AddressesList from "../../components/addressesList/AddressesList";
 import Header from "../../components/header/Header";
 
 const DashboardPage = () => {
@@ -5,6 +6,7 @@ const DashboardPage = () => {
     <main>
       <h1>Dashboard Page</h1>
       <Header />
+      <AddressesList />
     </main>
   );
 };

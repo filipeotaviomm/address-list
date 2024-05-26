@@ -55,4 +55,25 @@ export interface IUserContext {
   isUserLogged: boolean;
 }
 
-export interface IAddressContext {}
+export interface IAddressContext {
+  addressesList: IAddress[] | [];
+  setAddressesList: React.Dispatch<React.SetStateAction<[] | IAddress[]>>;
+
+  loading: boolean;
+}
+
+export interface IAddress {
+  id: string;
+  zipCode: string;
+  street: string;
+  number: number;
+  complement?: string;
+  neighborhood: string;
+  city: string;
+  state: string;
+  userId: string;
+}
+
+export interface ICardAddress {
+  address: IAddress;
+}

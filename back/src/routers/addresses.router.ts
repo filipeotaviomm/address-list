@@ -32,6 +32,8 @@ addressRouter.get(
   getAddressByIdController
 );
 
+addressRouter.get("/all", isUserLogged, getAllAddressesController);
+
 addressRouter.patch(
   "/:addressId",
   isUserLogged,
