@@ -2,13 +2,14 @@ import { MdOutlineModeEditOutline } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { ICardAddress } from "../../../types/types";
 import { useAddressContext } from "../../../hooks/useAddressContext";
+import styles from "./style.module.scss";
 
 const AddressesCard = ({ address }: ICardAddress) => {
   const {} = useAddressContext();
   return (
-    <li>
+    <li className={styles.li_cards}>
       <div>
-        <div>
+        <div className={styles.edit_remove_buttons}>
           <button
             // onClick={() => }
             title="Editar"
@@ -25,13 +26,28 @@ const AddressesCard = ({ address }: ICardAddress) => {
           </button>
         </div>
       </div>
-      <p>Cep: {address.zipCode}</p>
-      <p>Rua: {address.street}</p>
-      <p>Número: {address.number}</p>
-      <p>Complement: {address.complement}</p>
-      <p>Bairro: {address.neighborhood}</p>
-      <p>Cidade: {address.city}</p>
-      <p>Estado: {address.state}</p>
+      <p>
+        <span className="p2 lg">Cep:</span> {address.zipCode}
+      </p>
+      <p>
+        <span className="p2 lg">Rua:</span>
+        {address.street}
+      </p>
+      <p>
+        <span className="p2 lg">Número:</span> {address.number}
+      </p>
+      <p>
+        <span className="p2 lg">Complemento:</span> {address.complement}
+      </p>
+      <p>
+        <span className="p2 lg">Bairro:</span> {address.neighborhood}
+      </p>
+      <p>
+        <span className="p2 lg">Cidade:</span> {address.city}
+      </p>
+      <p>
+        <span className="p2 lg">Estado:</span> {address.state}
+      </p>
     </li>
   );
 };

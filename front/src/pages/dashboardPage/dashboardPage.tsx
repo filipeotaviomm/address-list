@@ -1,12 +1,16 @@
 import AddressesList from "../../components/addressesList/AddressesList";
 import Header from "../../components/header/Header";
+import styles from "./style.module.scss";
 
 const DashboardPage = () => {
   return (
     <main>
-      <h1>Dashboard Page</h1>
-      <Header />
-      <AddressesList />
+      <div>
+        <Header />
+      </div>
+      <section className={`containerDashboard ${styles.address_section}`}>
+        <AddressesList />
+      </section>
     </main>
   );
 };

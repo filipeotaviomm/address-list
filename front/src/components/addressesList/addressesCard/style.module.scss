@@ -1,0 +1,25 @@
+.li_cards {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--color-purple);
+  border-radius: 5px;
+  padding: 15px;
+  gap: 5px;
+
+  & > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+    div {
+      margin-bottom: 10px;
+    }
+  }
+
+  .edit_remove_buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
