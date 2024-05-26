@@ -15,6 +15,10 @@ export const AddressProvider = ({ children }: IChildren) => {
   const [addressesList, setAddressesList] = useState<IAddress[] | []>([]);
   const [createAddressModalIsVisible, setCreateAddressModalIsVisible] =
     useState(false);
+  const [editingAddress, setEditingAddress] = useState({} as IAddress);
+  const [confirmDeleteAddress, setConfirmDeleteAddress] = useState<IAddress>(
+    {} as IAddress
+  );
 
   useEffect(() => {
     const getAllAddresses = async () => {
@@ -56,6 +60,61 @@ export const AddressProvider = ({ children }: IChildren) => {
     }
   };
 
+  const updateAddress = async (
+    formData: ICreateAddressFormValues,
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) => {
+    const token: string | null = localStorage.getItem("@address-list:token");
+    if (token) {
+      setLoading(true);
+      try {
+        api.defaults.headers.common.Authorization = `Bearer ${token}`;
+        const response = await api.patch(
+          `./address/${editingAddress.id}`,
+          formData
+        );
+
+        const newAddressesList = addressesList.map((addr) => {
+          if (addr.id === editingAddress.id) {
+            return response.data;
+          } else {
+            return addr;
+          }
+        });
+        setAddressesList(newAddressesList);
+        toast.success("Endereço atualizado com sucesso");
+        setEditingAddress({} as IAddress);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+  };
+
+  const deleteAddress = async (
+    removedId: string,
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) => {
+    try {
+      setLoading(true);
+      const token: string | null = localStorage.getItem("@address-list:token");
+      api.defaults.headers.common.Authorization = `Bearer ${token}`;
+      await api.delete(`/address/${removedId}`);
+      setConfirmDeleteAddress({} as IAddress);
+      toast.success("Endereço deletado com sucesso");
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+
+    const addressesListFiltered = addressesList.filter(
+      (addr) => addr.id !== removedId
+    );
+    setAddressesList(addressesListFiltered);
+  };
+
   return (
     <AddressContext.Provider
       value={{
@@ -65,6 +124,12 @@ export const AddressProvider = ({ children }: IChildren) => {
         createAddressModalIsVisible,
         setCreateAddressModalIsVisible,
         createAddress,
+        editingAddress,
+        setEditingAddress,
+        updateAddress,
+        confirmDeleteAddress,
+        setConfirmDeleteAddress,
+        deleteAddress,
       }}
     >
       {children}

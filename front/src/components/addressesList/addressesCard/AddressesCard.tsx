@@ -5,20 +5,20 @@ import { useAddressContext } from "../../../hooks/useAddressContext";
 import styles from "./style.module.scss";
 
 const AddressesCard = ({ address }: ICardAddress) => {
-  const {} = useAddressContext();
+  const { setEditingAddress, setConfirmDeleteAddress } = useAddressContext();
   return (
     <li className={styles.li_cards}>
       <div>
         <div className={styles.edit_remove_buttons}>
           <button
-            // onClick={() => }
+            onClick={() => setEditingAddress(address)}
             title="Editar"
             aria-label="edit"
           >
             <MdOutlineModeEditOutline size={18} />
           </button>
           <button
-            // onClick={() => }
+            onClick={() => setConfirmDeleteAddress(address)}
             title="Remover"
             aria-label="remove"
           >
