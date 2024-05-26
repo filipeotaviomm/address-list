@@ -11,7 +11,10 @@ const createAddressController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const address = await createAddressService(res.locals.decoded.sub, req.body);
+  const address = await createAddressService(
+    "e7a235c4-836e-4150-8f89-cf6a7d313f7d",
+    req.body
+  );
 
   return res.status(201).json(address);
 };
@@ -20,7 +23,9 @@ const getAllAddressesController = async (
   _req: Request,
   res: Response
 ): Promise<Response> => {
-  const addresses = await getAllAddressesService(res.locals.decoded.sub);
+  const addresses = await getAllAddressesService(
+    "e7a235c4-836e-4150-8f89-cf6a7d313f7d"
+  );
 
   return res.status(200).json(addresses);
 };

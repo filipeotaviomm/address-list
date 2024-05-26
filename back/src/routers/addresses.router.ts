@@ -18,33 +18,35 @@ export const addressRouter: Router = Router();
 
 addressRouter.post(
   "/",
-  isUserLogged,
+  // isUserLogged,
   validateBody(addressReqSchema),
   createAddressController
 );
 
-addressRouter.get("/", isUserLogged, getAllAddressesController);
+addressRouter.get(
+  "/all",
+  //  isUserLogged,
+  getAllAddressesController
+);
 
 addressRouter.get(
   "/:addressId",
-  isUserLogged,
-  doesAddressExist,
+  // isUserLogged,
+  // doesAddressExist,
   getAddressByIdController
 );
 
-addressRouter.get("/all", isUserLogged, getAllAddressesController);
-
 addressRouter.patch(
   "/:addressId",
-  isUserLogged,
-  doesAddressExist,
+  // isUserLogged,
+  // doesAddressExist,
   validateBody(addressUpdateSchema),
   updateAddressController
 );
 
 addressRouter.delete(
   "/:addressId",
-  isUserLogged,
-  doesAddressExist,
+  // isUserLogged,
+  // doesAddressExist,
   deleteAddressController
 );
