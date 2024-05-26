@@ -1,0 +1,15 @@
+:root {
+  --font-primary: "Inter", sans-serif;
+  --color-black: #121214;
+  --color-grey3: #212529;
+  --color-grey2: #343b41;
+  --color-grey1: #868e96;
+  --color-white: #f8f9fa;
+  --color-success: #3fe864;
+  --color-negative: #e83f5b;
+}
+
+body {
+  background: var(--color-white);
+  font-family: var(--font-primary);
+}
