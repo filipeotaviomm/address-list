@@ -1,5 +1,6 @@
 import { ForwardedRef, forwardRef } from "react";
 import { IInputProps } from "../../../types/types";
+import styles from "./style.module.scss";
 
 const Input = forwardRef(
   (
@@ -7,8 +8,10 @@ const Input = forwardRef(
     ref: ForwardedRef<HTMLInputElement>
   ) => {
     return (
-      <div>
-        <label htmlFor={id}>{label}</label>
+      <div className={styles.div_input}>
+        <label className="p2 lg" htmlFor={id}>
+          {label}
+        </label>
         <input readOnly={readOnly} id={id} ref={ref} {...rest} />
         {error ? <p>{error.message}</p> : null}
       </div>

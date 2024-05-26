@@ -2,6 +2,7 @@ import React, { ReactNode, SelectHTMLAttributes } from "react";
 import { FieldError } from "react-hook-form";
 import { IRegisterFormValues } from "../components/forms/registerForm/registerFormSchema";
 import { ILoginFormValues } from "../components/forms/loginForm/loginFormSchema";
+import { ICreateAddressFormValues } from "../components/forms/createAddressForm/CreateAddressFormSchema";
 
 export interface IInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -60,13 +61,22 @@ export interface IAddressContext {
   setAddressesList: React.Dispatch<React.SetStateAction<[] | IAddress[]>>;
 
   loading: boolean;
+
+  createAddressModalIsVisible: boolean;
+  setCreateAddressModalIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+
+  createAddress: (
+    formData: ICreateAddressFormValues,
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>,
+    reset: () => void
+  ) => Promise<void>;
 }
 
 export interface IAddress {
   id: string;
   zipCode: string;
   street: string;
-  number: number;
+  number: string;
   complement?: string;
   neighborhood: string;
   city: string;
