@@ -14,7 +14,7 @@ type IAllAddressesResp = z.infer<typeof allAddressRespSchema>;
 interface IAddressUpdate {
   zipCode?: string;
   street?: string;
-  number?: number;
+  number?: string;
   complement?: string;
   neighborhood?: string;
   city?: string;
