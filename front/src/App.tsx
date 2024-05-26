@@ -1,4 +1,6 @@
+import "./styles/index.scss";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { AddressProvider } from "./providers/AddressContext";
 import { UserProvider } from "./providers/UserContext";
 import { RoutesMain } from "./routes";
