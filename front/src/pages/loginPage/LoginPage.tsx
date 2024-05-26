@@ -1,7 +1,7 @@
 import { LoginForm } from "../../components/forms/loginForm/LoginForm";
 import { Link } from "react-router-dom";
 
-export const LoginPage = () => {
+const LoginPage = () => {
   return (
     <main>
       <div>
@@ -17,3 +17,5 @@ export const LoginPage = () => {
     </main>
   );
 };
+
+export default LoginPage;

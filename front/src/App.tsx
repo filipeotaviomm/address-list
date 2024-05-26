@@ -1,7 +1,7 @@
 import { ToastContainer } from "react-toastify";
 import { AddressProvider } from "./providers/AddressContext";
 import { UserProvider } from "./providers/UserContext";
-import { RoutesMain } from "./routes/RoutesMain";
+import { RoutesMain } from "./routes";
 
 function App() {
   return (
