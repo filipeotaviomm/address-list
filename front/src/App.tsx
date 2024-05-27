@@ -13,7 +13,7 @@ function App() {
           <RoutesMain />
         </AddressProvider>
       </UserProvider>
-      <ToastContainer autoClose={2 * 1000} position="bottom-right" />
+      <ToastContainer autoClose={2 * 1000} position="top-right" />
     </>
   );
 }

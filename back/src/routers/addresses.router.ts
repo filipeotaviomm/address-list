@@ -39,14 +39,14 @@ addressRouter.get(
 addressRouter.get(
   "/:addressId",
   // isUserLogged,
-  doesAddressExist,
+  // doesAddressExist,
   getAddressByIdController
 );
 
 addressRouter.patch(
   "/:addressId",
   // isUserLogged,
-  doesAddressExist,
+  // doesAddressExist,
   validateBody(addressUpdateSchema),
   updateAddressController
 );
@@ -54,6 +54,6 @@ addressRouter.patch(
 addressRouter.delete(
   "/:addressId",
   isUserLogged,
-  doesAddressExist,
+  // doesAddressExist,
   deleteAddressController
 );

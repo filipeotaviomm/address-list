@@ -7,7 +7,7 @@ import styles from "./style.module.scss";
 
 const MenuHeader = () => {
   const { setIsMenuOpen, setUser } = useUserContext();
-  const { setAddressesList } = useAddressContext();
+  const { setAddressesList, downloadCsv } = useAddressContext();
 
   const navigate = useNavigate();
 
@@ -28,13 +28,13 @@ const MenuHeader = () => {
       }
     };
 
-    // const handleInClick = (e: MouseEvent) => {
-    //   setTimeout(() => {
-    //     if (boxRef.current?.contains(e.target as Node)) {
-    //       setIsMenuOpen(false);
-    //     }
-    //   }, 100);
-    // };
+    const handleInClick = (e: MouseEvent) => {
+      setTimeout(() => {
+        if (boxRef.current?.contains(e.target as Node)) {
+          setIsMenuOpen(false);
+        }
+      }, 100);
+    };
 
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -43,12 +43,12 @@ const MenuHeader = () => {
     };
 
     window.addEventListener("mousedown", handleOutClick);
-    // window.addEventListener("mousedown", handleInClick);
+    window.addEventListener("mousedown", handleInClick);
     window.addEventListener("keydown", handleKeyPress);
 
     return () => {
       window.removeEventListener("mousedown", handleOutClick);
-      // window.removeEventListener("mousedown", handleInClick);
+      window.removeEventListener("mousedown", handleInClick);
       window.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
@@ -56,7 +56,7 @@ const MenuHeader = () => {
   return (
     <div className={styles.div_menu} ref={boxRef}>
       <button>Atualizar seus dados</button>
-      <button>Arquivo CSV</button>
+      <button onClick={downloadCsv}>Arquivo CSV</button>
       <button>Deletar sua conta</button>
       <button onClick={logout}>Log out</button>
     </div>

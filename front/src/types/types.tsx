@@ -91,6 +91,8 @@ export interface IAddressContext {
   ) => Promise<void>;
 
   getAddressByCep: (cep: string) => Promise<any>;
+
+  downloadCsv: () => Promise<void>;
 }
 
 export interface IAddress {
