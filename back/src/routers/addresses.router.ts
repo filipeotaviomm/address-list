@@ -9,6 +9,7 @@ import {
   createAddressController,
   deleteAddressController,
   getAddressByIdController,
+  getAllAddressCsvController,
   getAllAddressesController,
   updateAddressController,
 } from "../controllers/addresses.controller";
@@ -28,6 +29,8 @@ addressRouter.get(
   //  isUserLogged,
   getAllAddressesController
 );
+
+addressRouter.get("/export/csv", isUserLogged, getAllAddressCsvController);
 
 addressRouter.get(
   "/:addressId",

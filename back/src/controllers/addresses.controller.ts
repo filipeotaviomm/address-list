@@ -3,6 +3,7 @@ import {
   createAddressService,
   deleteAddressService,
   getAddressByIdService,
+  getAllAddressCsvService,
   getAllAddressesService,
   updateAddressService,
 } from "../services/addresses.service";
@@ -28,6 +29,20 @@ const getAllAddressesController = async (
   );
 
   return res.status(200).json(addresses);
+};
+
+const getAllAddressCsvController = async (
+  _req: Request,
+  res: Response
+): Promise<Response> => {
+  const csv = await getAllAddressCsvService(
+    "e7a235c4-836e-4150-8f89-cf6a7d313f7d"
+  );
+
+  res.header("Content-Type", "text/csv");
+  res.attachment("addresses.csv");
+
+  return res.send(csv);
 };
 
 const getAddressByIdController = async (
@@ -60,6 +75,7 @@ const deleteAddressController = async (
 export {
   createAddressController,
   getAllAddressesController,
+  getAllAddressCsvController,
   getAddressByIdController,
   updateAddressController,
   deleteAddressController,
