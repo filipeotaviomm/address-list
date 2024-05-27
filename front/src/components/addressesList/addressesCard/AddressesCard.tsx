@@ -6,6 +6,11 @@ import styles from "./style.module.scss";
 
 const AddressesCard = ({ address }: ICardAddress) => {
   const { setEditingAddress, setConfirmDeleteAddress } = useAddressContext();
+  const formattedZipCode = `${address.zipCode.slice(
+    0,
+    5
+  )}-${address.zipCode.slice(5)}`;
+
   return (
     <li className={styles.li_cards}>
       <div>
@@ -27,7 +32,7 @@ const AddressesCard = ({ address }: ICardAddress) => {
         </div>
       </div>
       <p>
-        <span className="p2 lg">Cep:</span> {address.zipCode}
+        <span className="p2 lg">Cep:</span> {formattedZipCode}
       </p>
       <p>
         <span className="p2 lg">Rua:</span>

@@ -1,11 +1,12 @@
-import { useForm } from "react-hook-form";
-import { ILoginFormValues, loginFormSchema } from "./loginFormSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../input/Input";
 import { InputPassword } from "../inputPassword/InputPassword";
-import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ILoginFormValues, loginFormSchema } from "./loginFormSchema";
 import { ImSpinner3 } from "react-icons/im";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { useUserContext } from "../../../hooks/useUserContext";
+import styles from "./style.module.scss";
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
@@ -23,7 +24,7 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(login)}>
+    <form className={styles.login_form} onSubmit={handleSubmit(login)}>
       <Input
         label="Username"
         id="userName"
@@ -40,7 +41,7 @@ const LoginForm = () => {
         error={errors.password}
         disabled={loading}
       />
-      <button type="submit" disabled={loading}>
+      <button className="p2 lg" type="submit" disabled={loading}>
         {loading ? <ImSpinner3 /> : "Entrar"}
       </button>
     </form>

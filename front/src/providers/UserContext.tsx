@@ -26,7 +26,9 @@ export const UserProvider = ({ children }: IChildren) => {
       setLoading(true);
       await api.post("/user/register", formData);
       toast.success("Conta criada com sucesso");
+      // setTimeout(() => {
       navigate("/");
+      // }, 1200);
       reset();
     } catch (error: any) {
       if (error.response?.status === 409) {
