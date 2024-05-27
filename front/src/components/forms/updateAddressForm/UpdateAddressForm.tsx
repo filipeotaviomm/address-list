@@ -76,7 +76,7 @@ const UpdateAddressForm = () => {
           <Input
             className={styles.input}
             label="Número"
-            type="number"
+            type="text"
             id="number"
             placeholder="Digite o número"
             {...register("number")}

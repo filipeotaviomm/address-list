@@ -124,7 +124,32 @@ export const AddressProvider = ({ children }: IChildren) => {
     }
   };
 
-  // const DownloadCsvButton = ({ userId }) => {} //próximo passo
+  const downloadCsv = async () => {
+    try {
+      const token: string | null = localStorage.getItem("@address-list:token");
+      if (!token) {
+        throw new Error("Token não encontrado");
+      }
+      api.defaults.headers.common.Authorization = `Bearer ${token}`;
+
+      const response = await api.get("/address/export/csv", {
+        responseType: "blob",
+      });
+
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "addresses.csv");
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      toast.success("CSV baixado com sucesso");
+    } catch (error) {
+      console.error(error);
+      toast.error("Falha ao baixar o CSV");
+    }
+  };
 
   return (
     <AddressContext.Provider
@@ -142,6 +167,7 @@ export const AddressProvider = ({ children }: IChildren) => {
         setConfirmDeleteAddress,
         deleteAddress,
         getAddressByCep,
+        downloadCsv,
       }}
     >
       {children}
