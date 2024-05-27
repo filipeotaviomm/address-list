@@ -7,6 +7,7 @@ import {
   IAllAddressesResp,
 } from "../interfaces/address.interface";
 import { addressSchema, allAddressRespSchema } from "../schemas/address.schema";
+import { createObjectCsvStringifier } from "csv-writer";
 
 const createAddressService = async (
   userId: string,
@@ -27,6 +28,41 @@ const getAllAddressesService = async (
   });
 
   return allAddressRespSchema.parse(addresses);
+};
+
+const getAllAddressCsvService = async (userId: string): Promise<string> => {
+  const addresses: Address[] = await prisma.address.findMany({
+    where: { userId },
+  });
+
+  const csvStringifier = createObjectCsvStringifier({
+    header: [
+      { id: "id", title: "Id" },
+      { id: "zipCode", title: "Cep" },
+      { id: "street", title: "Logradouro" },
+      { id: "number", title: "Número" },
+      { id: "complement", title: "Complemento" },
+      { id: "neighborhood", title: "Bairro" },
+      { id: "city", title: "Cidade" },
+      { id: "state", title: "Estado" },
+    ],
+  });
+
+  const addressRecords = addresses.map((address) => ({
+    id: address.id,
+    zipCode: address.zipCode,
+    street: address.street,
+    number: address.number,
+    complement: address.complement,
+    neighborhood: address.neighborhood,
+    city: address.city,
+    state: address.state,
+  }));
+
+  return (
+    csvStringifier.getHeaderString() +
+    csvStringifier.stringifyRecords(addressRecords)
+  );
 };
 
 const getAddressByIdService = async (
@@ -58,6 +94,7 @@ const deleteAddressService = async (addressId: string): Promise<void> => {
 export {
   createAddressService,
   getAllAddressesService,
+  getAllAddressCsvService,
   getAddressByIdService,
   updateAddressService,
   deleteAddressService,
