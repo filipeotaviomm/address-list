@@ -6,7 +6,7 @@ const RegisterPage = () => {
   return (
     <main className={styles.register_main}>
       <div>
-        <h1 className={styles.title}>Login</h1>
+        <h1 className={styles.title}>Cadastre-se</h1>
         <RegisterForm />
         <div className={styles.div_register}>
           <p>Já possui uma conta?</p>

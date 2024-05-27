@@ -35,8 +35,7 @@ const AddressesCard = ({ address }: ICardAddress) => {
         <span className="p2 lg">Cep:</span> {formattedZipCode}
       </p>
       <p>
-        <span className="p2 lg">Rua:</span>
-        {address.street}
+        <span className="p2 lg">Logradouro:</span> {address.street}
       </p>
       <p>
         <span className="p2 lg">Número:</span> {address.number}

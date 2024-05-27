@@ -86,6 +86,8 @@ export interface IAddressContext {
     removedId: string,
     setLoading: React.Dispatch<React.SetStateAction<boolean>>
   ) => Promise<void>;
+
+  getAddressByCep: (cep: string) => Promise<any>;
 }
 
 export interface IAddress {
