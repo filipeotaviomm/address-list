@@ -13,7 +13,7 @@ const Input = forwardRef(
           {label}
         </label>
         <input readOnly={readOnly} id={id} ref={ref} {...rest} />
-        {error ? <p>{error.message}</p> : null}
+        {error ? <p className={styles.error}>{error.message}</p> : null}
       </div>
     );
   }

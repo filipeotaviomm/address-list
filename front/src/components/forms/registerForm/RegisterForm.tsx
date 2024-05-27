@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { IRegisterFormValues, registerFormSchema } from "./registerFormSchema";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../input/Input";
 import { InputPassword } from "../inputPassword/InputPassword";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { ImSpinner3 } from "react-icons/im";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { useUserContext } from "../../../hooks/useUserContext";
+import styles from "./style.module.scss";
+import { IRegisterFormValues, registerFormSchema } from "./registerFormSchema";
 
 const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
@@ -19,12 +20,16 @@ const RegisterForm = () => {
   } = useForm<IRegisterFormValues>({
     resolver: zodResolver(registerFormSchema),
   });
+
   const registration = (formData: IRegisterFormValues) => {
     userRegister(formData, setLoading, reset);
   };
 
   return (
-    <form onSubmit={handleSubmit(registration)}>
+    <form
+      className={styles.register_form}
+      onSubmit={handleSubmit(registration)}
+    >
       <Input
         label="Nome"
         type="text"
@@ -36,9 +41,8 @@ const RegisterForm = () => {
       />
       <Input
         label="Username"
-        type="text"
         id="userName"
-        placeholder="Digite seu Username"
+        placeholder="Digite seu username"
         {...register("userName")}
         error={errors.userName}
         disabled={loading}
@@ -59,7 +63,7 @@ const RegisterForm = () => {
         error={errors.confirmPassword}
         disabled={loading}
       />
-      <button type="submit" disabled={loading}>
+      <button className="p2 lg" type="submit" disabled={loading}>
         {loading ? <ImSpinner3 /> : "Cadastrar"}
       </button>
     </form>

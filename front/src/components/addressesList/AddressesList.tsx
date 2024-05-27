@@ -14,7 +14,7 @@ const AddressesList = () => {
       <div className={styles.plus_button}>
         <button onClick={() => setCreateAddressModalIsVisible(true)}>
           <p className="p2 lg">Criar Endereço</p>
-          <CiCirclePlus size={30} />
+          <CiCirclePlus size={30} style={{ color: "#291e82" }} />
         </button>
       </div>
 
