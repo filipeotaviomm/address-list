@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { IChildren, IAddressContext, IAddress } from "../types/types";
 import { useUserContext } from "../hooks/useUserContext";
-import { api } from "../services/api";
+import { api, viacepApi } from "../services/api";
 import { ICreateAddressFormValues } from "../components/forms/createAddressForm/CreateAddressFormSchema";
 import { toast } from "react-toastify";
 
@@ -23,18 +23,18 @@ export const AddressProvider = ({ children }: IChildren) => {
   useEffect(() => {
     const getAllAddresses = async () => {
       const token: string | null = localStorage.getItem("@address-list:token");
-      // if (token) {
-      try {
-        setLoading(true);
-        api.defaults.headers.common.Authorization = `Bearer ${token}`;
-        const response = await api.get("/address/all");
-        setAddressesList(response.data);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
+      if (token) {
+        try {
+          setLoading(true);
+          api.defaults.headers.common.Authorization = `Bearer ${token}`;
+          const response = await api.get("/address/all");
+          setAddressesList(response.data);
+        } catch (error) {
+          console.log(error);
+        } finally {
+          setLoading(false);
+        }
       }
-      // }
     };
     getAllAddresses();
   }, [isUserLogged]);
@@ -115,6 +115,15 @@ export const AddressProvider = ({ children }: IChildren) => {
     setAddressesList(addressesListFiltered);
   };
 
+  const getAddressByCep = async (cep: string) => {
+    try {
+      const response = await viacepApi.get(`${cep}/json/`);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <AddressContext.Provider
       value={{
@@ -130,6 +139,7 @@ export const AddressProvider = ({ children }: IChildren) => {
         confirmDeleteAddress,
         setConfirmDeleteAddress,
         deleteAddress,
+        getAddressByCep,
       }}
     >
       {children}

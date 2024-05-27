@@ -6,6 +6,14 @@
   border-radius: 5px;
   padding: 15px;
   gap: 5px;
+  background-image: linear-gradient(
+    360deg,
+    #a685e6 0%,
+    #9279f0 25%,
+    #7a64db 50%,
+    #6450c8 75%,
+    #503cb5 100%
+  );
 
   & > div {
     display: flex;

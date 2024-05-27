@@ -11,20 +11,34 @@ import {
 } from "./CreateAddressFormSchema";
 
 const CreateAddressForm = () => {
-  const { createAddress } = useAddressContext();
-
+  const { createAddress, getAddressByCep } = useAddressContext();
   const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
+    setFocus,
   } = useForm<ICreateAddressFormValues>({
     resolver: zodResolver(CreateAddressFormSchema),
   });
   const create = (formData: ICreateAddressFormValues) => {
     createAddress(formData, setLoading, reset);
   };
+
+  const checkCEP = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const cep = e.target.value.replace(/\D/g, "");
+    const data = await getAddressByCep(cep);
+
+    setValue("street", data.logradouro);
+    setValue("neighborhood", data.bairro);
+    setValue("city", data.localidade);
+    setValue("state", data.uf);
+    setFocus("number");
+  };
+
   return (
     <form className={styles.create_form} onSubmit={handleSubmit(create)}>
       <div className={styles.both_sides}>
@@ -36,15 +50,16 @@ const CreateAddressForm = () => {
             id="zipCode"
             placeholder="Digite o cep"
             {...register("zipCode")}
+            onBlur={checkCEP}
             error={errors.zipCode}
             disabled={loading}
           />
           <Input
             className={styles.input}
-            label="Rua"
+            label="Logradouro"
             type="text"
             id="street"
-            placeholder="Digite o nome da rua"
+            placeholder="Digite o nome do logradouro"
             {...register("street")}
             error={errors.street}
             disabled={loading}
@@ -52,7 +67,7 @@ const CreateAddressForm = () => {
           <Input
             className={styles.input}
             label="Número"
-            type="number"
+            type="text"
             id="number"
             placeholder="Digite o número"
             {...register("number")}
