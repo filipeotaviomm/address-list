@@ -26,30 +26,34 @@ addressRouter.post(
 
 addressRouter.get(
   "/all",
-  //  isUserLogged,
+  // isUserLogged,
   getAllAddressesController
 );
 
-addressRouter.get("/export/csv", isUserLogged, getAllAddressCsvController);
+addressRouter.get(
+  "/export/csv",
+  // isUserLogged,
+  getAllAddressCsvController
+);
 
 addressRouter.get(
   "/:addressId",
   // isUserLogged,
-  // doesAddressExist,
+  doesAddressExist,
   getAddressByIdController
 );
 
 addressRouter.patch(
   "/:addressId",
   // isUserLogged,
-  // doesAddressExist,
+  doesAddressExist,
   validateBody(addressUpdateSchema),
   updateAddressController
 );
 
 addressRouter.delete(
   "/:addressId",
-  // isUserLogged,
-  // doesAddressExist,
+  isUserLogged,
+  doesAddressExist,
   deleteAddressController
 );

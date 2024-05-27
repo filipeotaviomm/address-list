@@ -22,10 +22,10 @@ export const loginService = async (body: ILoginReq): Promise<ILoginResp> => {
   }
 
   const token: string = sign(
-    { userName: user.userName },
+    { name: user.name, userName: user.userName },
     process.env.SECRET_KEY!,
     { subject: user.id, expiresIn: process.env.EXPIRES_IN }
   );
 
-  return { id: user.id, name: user.name, userName: user.userName, token };
+  return { token };
 };

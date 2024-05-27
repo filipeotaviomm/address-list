@@ -48,16 +48,22 @@ export const isUserLogged = (
   const authorization: string | undefined = req.headers.authorization;
 
   if (!authorization) {
+    console.log("Authorization header missing");
     throw new AppError("Missing bearer token", 401);
   }
 
   const token = authorization.split(" ")[1];
+  console.log("Token received:", token);
 
-  const decoded = verify(token, process.env.SECRET_KEY!);
-
-  res.locals.decoded = decoded;
-
-  return next();
+  try {
+    const decoded = verify(token, process.env.SECRET_KEY!);
+    console.log("Decoded token:", decoded);
+    res.locals.decoded = decoded;
+    return next();
+  } catch (error) {
+    console.error(error);
+    throw new AppError("Invalid token", 401);
+  }
 };
 
 export const doesUserHavePermission = async (
