@@ -27,5 +27,5 @@ export const loginService = async (body: ILoginReq): Promise<ILoginResp> => {
     { subject: user.id, expiresIn: process.env.EXPIRES_IN }
   );
 
-  return { token };
+  return { id: user.id, userName: user.userName, token };
 };

@@ -20,7 +20,7 @@ interface IUserUpdate {
 
 type ILoginReq = z.infer<typeof loginSchema>;
 
-type ILoginResp = { token: string };
+type ILoginResp = { id: string; userName: string; token: string };
 
 export {
   IUserReq,
