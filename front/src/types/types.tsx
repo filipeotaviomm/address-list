@@ -54,6 +54,9 @@ export interface IUserContext {
   setConfirmDeleteUser: React.Dispatch<React.SetStateAction<boolean>>;
 
   isUserLogged: boolean;
+
+  isMenuOpen: boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface IAddressContext {

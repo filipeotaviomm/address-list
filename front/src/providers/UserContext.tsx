@@ -15,6 +15,7 @@ export const UserProvider = ({ children }: IChildren) => {
   const [isUpdateUserModalOpen, setIsUpdateUserModalOpen] =
     useState<boolean>(false);
   const [confirmDeleteUser, setConfirmDeleteUser] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const userRegister = async (
@@ -144,6 +145,8 @@ export const UserProvider = ({ children }: IChildren) => {
         updateUser,
         isUpdateUserModalOpen,
         setIsUpdateUserModalOpen,
+        isMenuOpen,
+        setIsMenuOpen,
       }}
     >
       {children}

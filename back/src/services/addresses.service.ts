@@ -53,7 +53,7 @@ const getAllAddressCsvService = async (userId: string): Promise<string> => {
     zipCode: address.zipCode,
     street: address.street,
     number: address.number,
-    complement: address.complement,
+    complement: address.complement || "",
     neighborhood: address.neighborhood,
     city: address.city,
     state: address.state,
