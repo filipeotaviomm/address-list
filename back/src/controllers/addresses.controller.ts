@@ -12,32 +12,25 @@ const createAddressController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const address = await createAddressService(
-    "e7a235c4-836e-4150-8f89-cf6a7d313f7d",
-    req.body
-  );
+  const address = await createAddressService(req.params.userId, req.body);
 
   return res.status(201).json(address);
 };
 
 const getAllAddressesController = async (
-  _req: Request,
+  req: Request,
   res: Response
 ): Promise<Response> => {
-  const addresses = await getAllAddressesService(
-    "e7a235c4-836e-4150-8f89-cf6a7d313f7d"
-  );
+  const addresses = await getAllAddressesService(req.params.userId);
 
   return res.status(200).json(addresses);
 };
 
 const getAllAddressCsvController = async (
-  _req: Request,
+  req: Request,
   res: Response
 ): Promise<Response> => {
-  const csv = await getAllAddressCsvService(
-    "e7a235c4-836e-4150-8f89-cf6a7d313f7d"
-  );
+  const csv = await getAllAddressCsvService(req.params.userId);
 
   res.header("Content-Type", "text/csv");
   res.attachment("addresses.csv");
@@ -49,7 +42,7 @@ const getAddressByIdController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const address = await getAddressByIdService(req.params.addressId);
+  const address = await getAddressByIdService(res.locals.address.id);
 
   return res.status(200).json(address);
 };
@@ -58,7 +51,7 @@ const updateAddressController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const address = await updateAddressService(req.params.addressId, req.body);
+  const address = await updateAddressService(res.locals.address.id, req.body);
 
   return res.status(200).json(address);
 };
@@ -67,7 +60,7 @@ const deleteAddressController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  await deleteAddressService(req.params.addressId);
+  await deleteAddressService(res.locals.address.id);
 
   return res.status(204).json();
 };

@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { isUserLogged } from "../middlewares/users.middleware";
 import { validateBody } from "../middlewares/globals.middleware";
 import {
   addressReqSchema,
@@ -18,42 +17,22 @@ import { doesAddressExist } from "../middlewares/addresses.middleware";
 export const addressRouter: Router = Router();
 
 addressRouter.post(
-  "/",
-  // isUserLogged,
+  "/user/:userId",
   validateBody(addressReqSchema),
   createAddressController
 );
 
-addressRouter.get(
-  "/all",
-  // isUserLogged,
-  getAllAddressesController
-);
+addressRouter.get("/all/user/:userId", getAllAddressesController);
 
-addressRouter.get(
-  "/export/csv",
-  // isUserLogged,
-  getAllAddressCsvController
-);
+addressRouter.get("/export/csv/user/:userId", getAllAddressCsvController);
 
-addressRouter.get(
-  "/:addressId",
-  // isUserLogged,
-  // doesAddressExist,
-  getAddressByIdController
-);
+addressRouter.get("/:addressId", doesAddressExist, getAddressByIdController);
 
 addressRouter.patch(
   "/:addressId",
-  // isUserLogged,
-  // doesAddressExist,
+  doesAddressExist,
   validateBody(addressUpdateSchema),
   updateAddressController
 );
 
-addressRouter.delete(
-  "/:addressId",
-  isUserLogged,
-  // doesAddressExist,
-  deleteAddressController
-);
+addressRouter.delete("/:addressId", doesAddressExist, deleteAddressController);
