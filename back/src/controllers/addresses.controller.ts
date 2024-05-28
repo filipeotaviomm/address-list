@@ -14,6 +14,8 @@ const createAddressController = async (
 ): Promise<Response> => {
   const address = await createAddressService(req.params.userId, req.body);
 
+  console.log(req.params.userId);
+
   return res.status(201).json(address);
 };
 
