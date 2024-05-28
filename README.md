@@ -43,7 +43,14 @@ Esse projeto foi criado em 2024 para o teste técnico da empresa A&C.
 
   <h4>1º Passo</h4>
   <h5>Antes de começar, certifique-se de ter instalado o Node.js em sua máquina.</h3>
+  
   <p>Faça um clone deste repositório</p>
+
+  1. Abra um novo terminal e faça um clone deste repositório com o comando:
+
+```bash
+$ git clone nome-do-projeto
+```
 
   <h4>2º passo</h4>
   Variáveis de ambiente:
