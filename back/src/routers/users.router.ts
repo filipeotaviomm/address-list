@@ -10,8 +10,6 @@ import { validateBody } from "../middlewares/globals.middleware";
 import { userReqSchema, userUpdateSchema } from "../schemas/user.schema";
 import {
   doesUserExist,
-  // doesUserHavePermission,
-  // isUserLogged,
   isUserNameUnique,
 } from "../middlewares/users.middleware";
 
@@ -24,34 +22,16 @@ userRouter.post(
   createUserController
 );
 
-userRouter.get(
-  "/all",
-  //  isUserLogged,
-  getAllUsersController
-);
+userRouter.get("/all", getAllUsersController);
 
-userRouter.get(
-  "/:userId",
-  doesUserExist,
-  // isUserLogged,
-  // doesUserHavePermission,
-  getUserByIdController
-);
+userRouter.get("/:userId", doesUserExist, getUserByIdController);
 
 userRouter.patch(
   "/:userId",
   doesUserExist,
-  // isUserLogged,
-  // doesUserHavePermission,
   validateBody(userUpdateSchema),
   isUserNameUnique,
   updateUserController
 );
 
-userRouter.delete(
-  "/:userId",
-  doesUserExist,
-  // isUserLogged,
-  // doesUserHavePermission,
-  deleteUserController
-);
+userRouter.delete("/:userId", doesUserExist, deleteUserController);

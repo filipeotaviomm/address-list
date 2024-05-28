@@ -1,6 +1,6 @@
 import { User } from "@prisma/client";
 import { prisma } from "../app";
-import { verify } from "jsonwebtoken";
+// import { verify } from "jsonwebtoken";
 import { Request, Response, NextFunction } from "express";
 import { AppError } from "../errors";
 
@@ -40,43 +40,42 @@ export const doesUserExist = async (
   return next();
 };
 
-export const isUserLogged = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-): void => {
-  const authorization: string | undefined = req.headers.authorization;
+// export const isUserLogged = (
+//   req: Request,
+//   res: Response,
+//   next: NextFunction
+// ): void => {
+//   const authorization: string | undefined = req.headers.authorization;
 
-  if (!authorization) {
-    console.log("Authorization header missing");
-    throw new AppError("Missing bearer token", 401);
-  }
+//   if (!authorization) {
+//     throw new AppError("Missing bearer token", 401);
+//   }
 
-  const token = authorization.split(" ")[1];
-  console.log("Token received:", token);
+//   const token = authorization.split(" ")[1];
+//   console.log("Token received:", token);
 
-  try {
-    const decoded = verify(token, process.env.SECRET_KEY!);
-    console.log("Decoded token:", decoded);
-    res.locals.decoded = decoded;
-    return next();
-  } catch (error) {
-    console.error(error);
-    throw new AppError("Invalid token", 401);
-  }
-};
+//   try {
+//     const decoded = verify(token, process.env.SECRET_KEY!);
+//     console.log("Decoded token:", decoded);
+//     res.locals.decoded = decoded;
+//     return next();
+//   } catch (error) {
+//     console.error(error);
+//     throw new AppError("Invalid token", 401);
+//   }
+// };
 
-export const doesUserHavePermission = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-): Promise<void> => {
-  const userLoggedId = res.locals.decoded.sub;
-  const userIdUrl = req.params.userId;
+// export const doesUserHavePermission = async (
+//   req: Request,
+//   res: Response,
+//   next: NextFunction
+// ): Promise<void> => {
+//   const userLoggedId = res.locals.decoded.sub;
+//   const userIdUrl = req.params.userId;
 
-  if (userLoggedId !== userIdUrl) {
-    throw new AppError("You do not have permission", 403);
-  }
+//   if (userLoggedId !== userIdUrl) {
+//     throw new AppError("You do not have permission", 403);
+//   }
 
-  return next();
-};
+//   return next();
+// };

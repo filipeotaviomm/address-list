@@ -33,7 +33,7 @@ const MenuHeader = () => {
         if (boxRef.current?.contains(e.target as Node)) {
           setIsMenuOpen(false);
         }
-      }, 100);
+      }, 200);
     };
 
     const handleKeyPress = (e: KeyboardEvent) => {

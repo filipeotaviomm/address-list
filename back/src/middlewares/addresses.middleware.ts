@@ -16,9 +16,7 @@ export const doesAddressExist = async (
     throw new AppError("Address not found", 404);
   }
 
-  if (address.userId !== res.locals.decoded.sub) {
-    throw new AppError("You do not have permission", 403);
-  }
+  res.locals.address = address;
 
   return next();
 };
