@@ -18,7 +18,7 @@
 
 Esta é uma API de uma lista de endereços construída em NodeJS. Ela oferece funcionalidades avançadas de CRUD de usuários e CRUD de contatos vinculados aos respectivos usuários.
 
-A API possui autenticação de usuário e permite que o mesmo crie, atualize e exclua seus contatos, tendo todos eles listados na página inicial. Também é possível que o usuário crie, atualize e exclua a sua conta.
+A API possui autenticação de usuário e permite que o mesmo crie, atualize e exclua seus contatos, tendo todos eles listados na página inicial do frontend. Também é possível que o usuário crie, atualize e exclua a sua conta.
 
 O frontend faz requisições da maioria das rotas do backend, com excessão das rotas de atualização e de deleção de usuário.
 
