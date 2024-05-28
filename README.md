@@ -47,7 +47,7 @@ Esse projeto foi criado em 2024 para o teste técnico da empresa A&C.
   1. Abra um novo terminal e faça um clone deste repositório com o comando:
 
 ```bash
-$ git clone nome-do-projeto
+$ git clone https://github.com/filipeotaviomm/address-list.git
 ```
 
   <h4>2º passo</h4>
