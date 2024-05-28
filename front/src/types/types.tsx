@@ -1,4 +1,4 @@
-import React, { ReactNode, SelectHTMLAttributes } from "react";
+import React, { ReactNode } from "react";
 import { FieldError } from "react-hook-form";
 import { IRegisterFormValues } from "../components/forms/registerForm/registerFormSchema";
 import { ILoginFormValues } from "../components/forms/loginForm/loginFormSchema";
@@ -37,21 +37,6 @@ export interface IUserContext {
 
   user: IUser;
   setUser: React.Dispatch<React.SetStateAction<IUser>>;
-
-  updateUser: (
-    formData: ILoginFormValues, //tem que mudar
-    setLoading: React.Dispatch<React.SetStateAction<boolean>>
-  ) => Promise<void>;
-
-  isUpdateUserModalOpen: boolean;
-  setIsUpdateUserModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-
-  deleteUser: (
-    setLoading: React.Dispatch<React.SetStateAction<boolean>>
-  ) => Promise<void>;
-
-  confirmDeleteUser: boolean;
-  setConfirmDeleteUser: React.Dispatch<React.SetStateAction<boolean>>;
 
   isUserLogged: boolean;
 
