@@ -20,7 +20,9 @@ Esta é uma API de lista de contatos construída com NodeJS. Ela oferece funcion
 
 A API possui autenticação de usuário e permite que o mesmo crie, atualize e exclua seus contatos, tendo todos eles listados na página inicial. Também é possível que o usuário crie, atualize e exclua a sua conta.
 
-Esse projeto foi criado em 2024 durante o curso de desenvolvimento web full-stack da Kenzie Academy.
+O frontend faz requisições da maioria das rotas do backend, com excessão das rotas de atualização e de deleção de usuário.
+
+Esse projeto foi criado em 2024 para o teste técnico da empresa A&C.
 
 <a name="techs"></a>
 
@@ -45,25 +47,30 @@ Esse projeto foi criado em 2024 durante o curso de desenvolvimento web full-stac
 
   <h4>2º passo</h4>
   Variáveis de ambiente:
-    Crie um arquivo .env e complete com suas informações conforme esta no .env.example.
+    Entre na pasta "back", crie um arquivo ".env" e complete com suas informações conforme esta no arquivo ".env.example". 
+    Obs: é preciso criar um banco de dados no PostgreSQL para rodar o backend e preencher o ".env"
 
   <h4>3º Passo - Configurando o Backend</h4>
-  1. Abra um novo terminal e rode o seguinte comando para alterar para a pasta do back-end:
+  1. Abra um novo terminal e rode os seguintes comandos para alterar o caminho até a pasta do backend:
+
+```bash
+$ cd address-list/
+```
 
 ```bash
 $ cd back
 ```
 
-2. Rode os seguintes comandos:
+  2. Rode os seguintes comandos:
 
 ```bash
 #instala todas as dependências necessárias
 $ npm install
 
-# migrate
+# faz as migrações
 $ npx prisma migrate dev
 
-# development
+# roda o backend
 $ npm run dev
 ```
 
@@ -71,13 +78,17 @@ $ npm run dev
   1. Na raiz do projeto há um arquivo chamado "workspace_insomnia.json" que pode ser importado no insomnia para ser feito os testes das rotas, e também tem um arquivo chamado "api_requests_collection.har" que também pode ser importado no postman para ser feito os testes.
 
   <h4>5º Passo - Testando o Front-End</h4>
-  1. Abra um novo terminal e rode o seguinte comando para alterar para a pasta do front-end:
+  1. Abra um novo terminal e rode o seguinte comando para alterar o caminho até a pasta do frontend:
+
+```bash
+$ cd address-list/
+```
 
 ```bash
 $ cd front
 ```
 
-2.Configure o Front-End:
+2.2. Rode os seguintes comandos:
 
 ```bash
 #instala todas as dependências necessárias
