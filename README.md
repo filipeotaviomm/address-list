@@ -44,7 +44,7 @@ Esse projeto foi criado em 2024 para o teste técnico da empresa A&C.
   <h4>1º Passo</h4>
   <h5>Antes de começar, certifique-se de ter instalado o Node.js em sua máquina.</h3>
 
-  1. Abra um novo terminal e faça um clone deste repositório com o comando:
+    1. Abra um novo terminal e faça um clone deste repositório com o comando:
 
 ```bash
 $ git clone https://github.com/filipeotaviomm/address-list.git
@@ -56,6 +56,7 @@ $ git clone https://github.com/filipeotaviomm/address-list.git
     Obs: é preciso criar um banco de dados no PostgreSQL para rodar o backend e preencher o ".env"
 
   <h4>3º Passo - Configurando o Backend</h4>
+
     1. Abra um novo terminal e rode os seguintes comandos para alterar o caminho até a pasta do backend:
 
 ```bash
@@ -66,7 +67,7 @@ $ cd address-list/
 $ cd back
 ```
 
-  2. Rode os seguintes comandos:
+    2. Rode os seguintes comandos:
 
 ```bash
 #instala todas as dependências necessárias
@@ -80,10 +81,12 @@ $ npm run dev
 ```
 
   <h4>4º Passo - Testando o Backend</h4>
+  
     1. Na raiz do projeto há um arquivo chamado "workspace_insomnia.json" que pode ser importado no insomnia para ser feito os testes das rotas, e também tem um arquivo chamado "api_requests_collection.har" que também pode ser importado no postman para ser feito os testes.
 
 
   <h4>5º Passo - Testando o Front-End</h4>
+  
     1. Abra um novo terminal e rode o seguinte comando para alterar o caminho até a pasta do frontend:
 
 ```bash
@@ -94,7 +97,7 @@ $ cd address-list/
 $ cd front
 ```
 
-  2. Rode os seguintes comandos:
+    2. Rode os seguintes comandos:
 
 ```bash
 #instala todas as dependências necessárias
@@ -105,9 +108,9 @@ $ npm run dev
 ```
 
   <h4>6º Passo - Acesse a url no navegador</h4>
-      1. Copie a url gerada no terminal e a cole no navegador, em instantes a aplicação vai carregar, aí é só interagir com ela. A url gerada vai ser algo paarecido com isso:
+  
+    1. Copie a url gerada no terminal e a cole no navegador, em instantes a aplicação vai carregar, aí é só interagir com ela. A url gerada vai ser algo paarecido com isso:
       
-
 ```bash
 http://localhost:5173/
 ```
