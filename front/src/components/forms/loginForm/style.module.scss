@@ -1,0 +1,22 @@
+.login_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 5px;
+
+  & > button {
+    display: flex;
+    margin-top: 15px;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-purple);
+    border-radius: 5px;
+    padding: 10px;
+
+    &:hover {
+      border: 2px solid var(--color-purple);
+      background-color: var(--color-purple2);
+    }
+  }
+}

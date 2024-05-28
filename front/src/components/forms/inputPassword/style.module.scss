@@ -1,0 +1,27 @@
+.input_password {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+
+  & > input {
+    border: 2px solid var(--color-purple);
+    border-radius: 3px;
+    padding: 5px;
+    height: 45px;
+    width: 100%;
+  }
+
+  & > button {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    z-index: 1;
+  }
+
+  .error {
+    display: flex;
+    margin-top: 5px;
+    color: red;
+  }
+}

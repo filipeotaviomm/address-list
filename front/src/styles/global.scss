@@ -1,0 +1,27 @@
+:root {
+  --font-primary: "Inter", sans-serif;
+  --color-black: #121214;
+  --color-grey3: #212529;
+  --color-grey2: #343b41;
+  --color-grey1: #868e96;
+  --color-white: #f8f9fa;
+  --color-purple: #291e82;
+  --color-purple2: #5f3dc9;
+  --color-success: #3fe864;
+  --color-negative: #e83f5b;
+}
+
+body {
+  background: var(--color-white);
+  font-family: var(--font-primary);
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: #242c34;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #623cea;
+}

@@ -1,0 +1,20 @@
+.div_input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+
+  & > input {
+    border: 2px solid var(--color-purple);
+    border-radius: 3px;
+    padding: 5px;
+    height: 45px;
+    width: 100%;
+  }
+
+  .error {
+    display: flex;
+    margin-top: 5px;
+    color: red;
+  }
+}
