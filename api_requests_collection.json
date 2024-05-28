@@ -1,0 +1,999 @@
+{
+	"log": {
+		"version": "1.2",
+		"creator": {
+			"name": "Insomnia REST Client",
+			"version": "insomnia.desktop.app:v2023.5.8"
+		},
+		"entries": [
+			{
+				"startedDateTime": "2024-05-28T12:38:38.992Z",
+				"time": 7.945,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:3000/address",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/2023.5.8"
+						},
+						{
+							"name": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2dpbi1hdXRoLWFwaSIsInN1YiI6Ijk4NDViMGZhLWFiYTktNDA3YS1iNDExLWM0MzBiODUxYjZjMSIsImVtYWlsIjoiZmlsaXBlQG1haWwuY29tIiwiZXhwIjoxNzE2Mzk0MTI3fQ.1747fMABCQ3LS82T5-x5Zubwi0lmFl-G6BSxoT7Pv9c"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"zipCode\": \"12345678\",\n\t\"street\": \"Rua 4\",\n\t\"number\": \"4\",\n\t\"complement\": \"Apartamento\",\n\t\"neighborhood\": \"Riacho\",\n\t\"city\": \"Contagem\",\n\t\"state\": \"MG\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 201,
+					"statusText": "Created",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"name": "Content-Length",
+							"value": "167"
+						},
+						{
+							"name": "ETag",
+							"value": "W/\"a7-jlBWnxXeKkT8ZNZpYHYvEnCXCGk\""
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 26 May 2024 14:01:35 GMT"
+						},
+						{
+							"name": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"name": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"content": {
+						"size": 167,
+						"mimeType": "application/json; charset=utf-8",
+						"text": "{\"id\":\"4a2a437f-4cff-464b-8197-8248145feeac\",\"zipCode\":\"12345678\",\"street\":\"Rua 4\",\"number\":4,\"complement\":null,\"neighborhood\":\"Riacho\",\"city\":\"Contagem\",\"state\":\"MG\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 7.945,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Create Address"
+			},
+			{
+				"startedDateTime": "2024-05-28T12:38:38.992Z",
+				"time": 31.807000000000002,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:3000/address/all",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/2023.5.8"
+						},
+						{
+							"name": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2dpbi1hdXRoLWFwaSIsInN1YiI6Ijk4NDViMGZhLWFiYTktNDA3YS1iNDExLWM0MzBiODUxYjZjMSIsImVtYWlsIjoiZmlsaXBlQG1haWwuY29tIiwiZXhwIjoxNzE2Mzk0MTI3fQ.1747fMABCQ3LS82T5-x5Zubwi0lmFl-G6BSxoT7Pv9c"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 401,
+					"statusText": "Unauthorized",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"name": "Content-Length",
+							"value": "27"
+						},
+						{
+							"name": "ETag",
+							"value": "W/\"1b-w4O8U+0Ll+sSArmfAX18RvhWpiQ\""
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 27 May 2024 20:55:42 GMT"
+						},
+						{
+							"name": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"name": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"content": {
+						"size": 27,
+						"mimeType": "application/json; charset=utf-8",
+						"text": "{\"message\":\"Invalid token\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 31.807000000000002,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Get All Addresses"
+			},
+			{
+				"startedDateTime": "2024-05-28T12:38:38.992Z",
+				"time": 0,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:3000/address/export/csv",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/2023.5.8"
+						},
+						{
+							"name": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2dpbi1hdXRoLWFwaSIsInN1YiI6Ijk4NDViMGZhLWFiYTktNDA3YS1iNDExLWM0MzBiODUxYjZjMSIsImVtYWlsIjoiZmlsaXBlQG1haWwuY29tIiwiZXhwIjoxNzE2Mzk0MTI3fQ.1747fMABCQ3LS82T5-x5Zubwi0lmFl-G6BSxoT7Pv9c"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 0,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"content": {
+						"size": 0,
+						"mimeType": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 0,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Get Csv File All Addresses"
+			},
+			{
+				"startedDateTime": "2024-05-28T12:38:38.992Z",
+				"time": 4.622,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:3000/address/7d85cbfa-4b8b-4864-adb2-f6029b9fd37b",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/2023.5.8"
+						},
+						{
+							"name": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2dpbi1hdXRoLWFwaSIsInN1YiI6Ijk4NDViMGZhLWFiYTktNDA3YS1iNDExLWM0MzBiODUxYjZjMSIsImVtYWlsIjoiZmlsaXBlQG1haWwuY29tIiwiZXhwIjoxNzE2Mzk0MTI3fQ.1747fMABCQ3LS82T5-x5Zubwi0lmFl-G6BSxoT7Pv9c"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"name": "Content-Length",
+							"value": "225"
+						},
+						{
+							"name": "ETag",
+							"value": "W/\"e1-INyPEgkxWAAAI950y3LmFmqwavU\""
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 26 May 2024 14:17:37 GMT"
+						},
+						{
+							"name": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"name": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"content": {
+						"size": 225,
+						"mimeType": "application/json; charset=utf-8",
+						"text": "{\"id\":\"7d85cbfa-4b8b-4864-adb2-f6029b9fd37b\",\"zipCode\":\"12345678\",\"street\":\"Rua 12\",\"number\":1,\"complement\":\"Apartamento\",\"neighborhood\":\"Riacho\",\"city\":\"Contagem\",\"state\":\"MG\",\"userId\":\"e7a235c4-836e-4150-8f89-cf6a7d313f7d\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 4.622,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Get Address by Id"
+			},
+			{
+				"startedDateTime": "2024-05-28T12:38:38.992Z",
+				"time": 13.299,
+				"request": {
+					"method": "PATCH",
+					"url": "http://localhost:3000/address/7d85cbfa-4b8b-4864-adb2-f6029b9fd37b",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/2023.5.8"
+						},
+						{
+							"name": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2dpbi1hdXRoLWFwaSIsInN1YiI6Ijk4NDViMGZhLWFiYTktNDA3YS1iNDExLWM0MzBiODUxYjZjMSIsImVtYWlsIjoiZmlsaXBlQG1haWwuY29tIiwiZXhwIjoxNzE2Mzk0MTI3fQ.1747fMABCQ3LS82T5-x5Zubwi0lmFl-G6BSxoT7Pv9c"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"street\": \"Rua 1\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"name": "Content-Length",
+							"value": "224"
+						},
+						{
+							"name": "ETag",
+							"value": "W/\"e0-nXR06E/ejL0jCwunx9mMVb1XBgY\""
+						},
+						{
+							"name": "Date",
+							"value": "Sun, 26 May 2024 14:17:44 GMT"
+						},
+						{
+							"name": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"name": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"content": {
+						"size": 224,
+						"mimeType": "application/json; charset=utf-8",
+						"text": "{\"id\":\"7d85cbfa-4b8b-4864-adb2-f6029b9fd37b\",\"zipCode\":\"12345678\",\"street\":\"Rua 1\",\"number\":1,\"complement\":\"Apartamento\",\"neighborhood\":\"Riacho\",\"city\":\"Contagem\",\"state\":\"MG\",\"userId\":\"e7a235c4-836e-4150-8f89-cf6a7d313f7d\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 13.299,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Update Address"
+			},
+			{
+				"startedDateTime": "2024-05-28T12:38:38.992Z",
+				"time": 0,
+				"request": {
+					"method": "DELETE",
+					"url": "http://localhost:3000/address/oaksdas1g3a24s15a24seafse",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/2023.5.8"
+						},
+						{
+							"name": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2dpbi1hdXRoLWFwaSIsInN1YiI6Ijk4NDViMGZhLWFiYTktNDA3YS1iNDExLWM0MzBiODUxYjZjMSIsImVtYWlsIjoiZmlsaXBlQG1haWwuY29tIiwiZXhwIjoxNzE2Mzk0MTI3fQ.1747fMABCQ3LS82T5-x5Zubwi0lmFl-G6BSxoT7Pv9c"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 0,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"content": {
+						"size": 0,
+						"mimeType": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 0,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Delete Address"
+			},
+			{
+				"startedDateTime": "2024-05-28T12:38:38.992Z",
+				"time": 1342.55,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:3000/user/register",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/2023.5.8"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"name\": \"Filipe\",\n\t\"userName\": \"filipeotavio\",\n\t\"password\": \"@Aa123456\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 201,
+					"statusText": "Created",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"name": "Content-Length",
+							"value": "88"
+						},
+						{
+							"name": "ETag",
+							"value": "W/\"58-UARUK/JtlTMq47Tv07M2VrU2xfY\""
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 27 May 2024 15:51:54 GMT"
+						},
+						{
+							"name": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"name": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"content": {
+						"size": 88,
+						"mimeType": "application/json; charset=utf-8",
+						"text": "{\"id\":\"5ea6d507-edad-4ced-9d97-dea68ef1c740\",\"name\":\"Filipe\",\"userName\":\"filipeotavio6\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 1342.55,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Register"
+			},
+			{
+				"startedDateTime": "2024-05-28T12:38:38.992Z",
+				"time": 750.197,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:3000/login",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/2023.5.8"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"userName\": \"filipeotaviomm\",\n\t\"password\": \"@Aa123456\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"name": "Content-Length",
+							"value": "331"
+						},
+						{
+							"name": "ETag",
+							"value": "W/\"14b-FQ9ICtHUFqvq27OGZ6Gu6yLsioc\""
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 28 May 2024 01:05:05 GMT"
+						},
+						{
+							"name": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"name": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"content": {
+						"size": 331,
+						"mimeType": "application/json; charset=utf-8",
+						"text": "{\"id\":\"e7a235c4-836e-4150-8f89-cf6a7d313f7d\",\"userName\":\"filipeotaviomm\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRmlsaXBlIiwidXNlck5hbWUiOiJmaWxpcGVvdGF2aW9tbSIsImlhdCI6MTcxNjg1ODMwNSwiZXhwIjoxNzE2OTQ0NzA1LCJzdWIiOiJlN2EyMzVjNC04MzZlLTQxNTAtOGY4OS1jZjZhN2QzMTNmN2QifQ.ez5fy9n5BzJvW99Z2g-ic5f9NxOkqID9hU99kod61Aw\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 750.197,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Login"
+			},
+			{
+				"startedDateTime": "2024-05-28T12:38:38.992Z",
+				"time": 3.914,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:3000/user/all",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/2023.5.8"
+						},
+						{
+							"name": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2dpbi1hdXRoLWFwaSIsInN1YiI6Ijk4NDViMGZhLWFiYTktNDA3YS1iNDExLWM0MzBiODUxYjZjMSIsImVtYWlsIjoiZmlsaXBlQG1haWwuY29tIiwiZXhwIjoxNzE2Mzk0MTI3fQ.1747fMABCQ3LS82T5-x5Zubwi0lmFl-G6BSxoT7Pv9c"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"name": "Content-Length",
+							"value": "448"
+						},
+						{
+							"name": "ETag",
+							"value": "W/\"1c0-/z8nxKSS56v6jSbkJczEtNEqXYY\""
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 27 May 2024 22:57:11 GMT"
+						},
+						{
+							"name": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"name": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"content": {
+						"size": 448,
+						"mimeType": "application/json; charset=utf-8",
+						"text": "[{\"id\":\"3a227515-f537-4cad-b355-b5ddfffe5b84\",\"name\":\"Filipe\",\"userName\":\"filipeotavio\"},{\"id\":\"26a63075-8e50-4e1d-9cf8-31d9850046eb\",\"name\":\"Filipe\",\"userName\":\"filipeotavio2\"},{\"id\":\"2026a9ff-f53b-45e2-a066-b270d97ef258\",\"name\":\"Filipe\",\"userName\":\"filipeotavio5\"},{\"id\":\"5ea6d507-edad-4ced-9d97-dea68ef1c740\",\"name\":\"Filipe\",\"userName\":\"filipeotavio6\"},{\"id\":\"e7a235c4-836e-4150-8f89-cf6a7d313f7d\",\"name\":\"Filipeee\",\"userName\":\"filipeotaviomm\"}]"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 3.914,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Get All Users"
+			},
+			{
+				"startedDateTime": "2024-05-28T12:38:38.992Z",
+				"time": 6.361999999999999,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:3000/user/e7a235c4-836e-4150-8f89-cf6a7d313f7d",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/2023.5.8"
+						},
+						{
+							"name": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRmlsaXBlIiwidXNlck5hbWUiOiJmaWxpcGVvdGF2aW9tbSIsImlhdCI6MTcxNjg1ODMwNSwiZXhwIjoxNzE2OTQ0NzA1LCJzdWIiOiJlN2EyMzVjNC04MzZlLTQxNTAtOGY4OS1jZjZhN2QzMTNmN2QifQ.ez5fy9n5BzJvW99Z2g-ic5f9NxOkqID9hU99kod61Aw"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"name": "Content-Length",
+							"value": "89"
+						},
+						{
+							"name": "ETag",
+							"value": "W/\"59-X1Z20QwfiSKYiwkoH7zh4sUVLXY\""
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 27 May 2024 22:56:21 GMT"
+						},
+						{
+							"name": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"name": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"content": {
+						"size": 89,
+						"mimeType": "application/json; charset=utf-8",
+						"text": "{\"id\":\"e7a235c4-836e-4150-8f89-cf6a7d313f7d\",\"name\":\"Filipe\",\"userName\":\"filipeotaviomm\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 6.361999999999999,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Get User by Id"
+			},
+			{
+				"startedDateTime": "2024-05-28T12:38:38.992Z",
+				"time": 10.972000000000001,
+				"request": {
+					"method": "PATCH",
+					"url": "http://localhost:3000/user/e7a235c4-836e-4150-8f89-cf6a7d313f7d",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/2023.5.8"
+						},
+						{
+							"name": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2dpbi1hdXRoLWFwaSIsInN1YiI6Ijk4NDViMGZhLWFiYTktNDA3YS1iNDExLWM0MzBiODUxYjZjMSIsImVtYWlsIjoiZmlsaXBlQG1haWwuY29tIiwiZXhwIjoxNzE2Mzk0MTI3fQ.1747fMABCQ3LS82T5-x5Zubwi0lmFl-G6BSxoT7Pv9c"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"name\": \"Filipe!!\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "OK",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"name": "Content-Length",
+							"value": "89"
+						},
+						{
+							"name": "ETag",
+							"value": "W/\"59-X1Z20QwfiSKYiwkoH7zh4sUVLXY\""
+						},
+						{
+							"name": "Date",
+							"value": "Tue, 28 May 2024 11:05:36 GMT"
+						},
+						{
+							"name": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"name": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"content": {
+						"size": 89,
+						"mimeType": "application/json; charset=utf-8",
+						"text": "{\"id\":\"e7a235c4-836e-4150-8f89-cf6a7d313f7d\",\"name\":\"Filipe\",\"userName\":\"filipeotaviomm\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 10.972000000000001,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Update User"
+			},
+			{
+				"startedDateTime": "2024-05-28T12:38:38.992Z",
+				"time": 24.478,
+				"request": {
+					"method": "DELETE",
+					"url": "http://localhost:3000/user/45e7e9bf-b2e8-46b6-9f84-b22666a2b0cc",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/2023.5.8"
+						},
+						{
+							"name": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2dpbi1hdXRoLWFwaSIsInN1YiI6Ijk4NDViMGZhLWFiYTktNDA3YS1iNDExLWM0MzBiODUxYjZjMSIsImVtYWlsIjoiZmlsaXBlQG1haWwuY29tIiwiZXhwIjoxNzE2Mzk0MTI3fQ.1747fMABCQ3LS82T5-x5Zubwi0lmFl-G6BSxoT7Pv9c"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 204,
+					"statusText": "No Content",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 27 May 2024 22:56:42 GMT"
+						},
+						{
+							"name": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"name": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"content": {
+						"size": 0,
+						"mimeType": "",
+						"text": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 24.478,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Delete User"
+			}
+		]
+	}
+}
