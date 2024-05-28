@@ -40,7 +40,7 @@ const getAllAddressCsvService = async (userId: string): Promise<string> => {
       { id: "id", title: "Id" },
       { id: "zipCode", title: "Cep" },
       { id: "street", title: "Logradouro" },
-      { id: "number", title: "Número" },
+      { id: "number", title: "Numero" },
       { id: "complement", title: "Complemento" },
       { id: "neighborhood", title: "Bairro" },
       { id: "city", title: "Cidade" },
