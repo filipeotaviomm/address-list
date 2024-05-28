@@ -19,6 +19,7 @@ export const AddressProvider = ({ children }: IChildren) => {
   const [confirmDeleteAddress, setConfirmDeleteAddress] = useState<IAddress>(
     {} as IAddress
   );
+  const { user } = useUserContext();
 
   useEffect(() => {
     const getAllAddresses = async () => {
@@ -27,7 +28,7 @@ export const AddressProvider = ({ children }: IChildren) => {
         try {
           setLoading(true);
           api.defaults.headers.common.Authorization = `Bearer ${token}`;
-          const response = await api.get("/address/all");
+          const response = await api.get(`/address/all/user/${user.id}`);
           setAddressesList(response.data);
         } catch (error) {
           console.log(error);
@@ -47,8 +48,9 @@ export const AddressProvider = ({ children }: IChildren) => {
     try {
       const token: string | null = localStorage.getItem("@address-list:token");
       setLoading(true);
+      console.log(user.id);
       api.defaults.headers.common.Authorization = `Bearer ${token}`;
-      const response = await api.post("/address", formData);
+      const response = await api.post(`/address/user/${user.id}`, formData);
       setAddressesList([...addressesList, response.data]);
       toast.success("Endereço criado com sucesso");
       setCreateAddressModalIsVisible(false);
@@ -132,7 +134,7 @@ export const AddressProvider = ({ children }: IChildren) => {
       }
       api.defaults.headers.common.Authorization = `Bearer ${token}`;
 
-      const response = await api.get("/address/export/csv", {
+      const response = await api.get(`/address/export/csv/user/${user.id}`, {
         responseType: "blob",
       });
 
