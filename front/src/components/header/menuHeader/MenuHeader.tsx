@@ -55,9 +55,7 @@ const MenuHeader = () => {
 
   return (
     <div className={styles.div_menu} ref={boxRef}>
-      <button>Atualizar seus dados</button>
-      <button onClick={downloadCsv}>Arquivo CSV</button>
-      <button>Deletar sua conta</button>
+      <button onClick={downloadCsv}>Download Endereços (CSV)</button>
       <button onClick={logout}>Log out</button>
     </div>
   );

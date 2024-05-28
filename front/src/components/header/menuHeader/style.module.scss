@@ -1,8 +1,8 @@
 .div_menu {
   display: flex;
   flex-direction: column;
-  width: 180px;
-  height: 100px;
+  width: 210px;
+  height: 60px;
   background-color: white;
   border: 1px solid var(--color-purple);
   border-radius: 5px;
@@ -21,7 +21,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: rgba(153, 50, 204, 0.5);
+      background-color: #7a64db;
     }
   }
 }

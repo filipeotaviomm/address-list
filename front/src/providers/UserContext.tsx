@@ -12,9 +12,6 @@ export const UserContext = createContext<IUserContext>({} as IUserContext);
 export const UserProvider = ({ children }: IChildren) => {
   const [isUserLogged, setIsUserLogged] = useState<boolean>(false);
   const [user, setUser] = useState<IUser>({} as IUser);
-  const [isUpdateUserModalOpen, setIsUpdateUserModalOpen] =
-    useState<boolean>(false);
-  const [confirmDeleteUser, setConfirmDeleteUser] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const navigate = useNavigate();
 
@@ -27,9 +24,7 @@ export const UserProvider = ({ children }: IChildren) => {
       setLoading(true);
       await api.post("/user/register", formData);
       toast.success("Conta criada com sucesso");
-      // setTimeout(() => {
       navigate("/");
-      // }, 1200);
       reset();
     } catch (error: any) {
       if (error.response?.status === 409) {
@@ -49,6 +44,7 @@ export const UserProvider = ({ children }: IChildren) => {
     try {
       setLoading(true);
       const response = await api.post("/login", formData);
+      toast.success("Indo para o Dashboard");
       const { token } = response.data;
       localStorage.setItem("@address-list:token", token);
       setIsUserLogged(!isUserLogged);
@@ -83,54 +79,6 @@ export const UserProvider = ({ children }: IChildren) => {
     getUserbyId();
   }, [isUserLogged]);
 
-  const updateUser = async (
-    formData: ILoginFormValues, //tem que mudar
-    setLoading: React.Dispatch<React.SetStateAction<boolean>>
-  ) => {
-    const token: string | null = localStorage.getItem("@contact-liszt:token");
-    if (token) {
-      try {
-        setLoading(true);
-        const decoded = jwtDecode(token);
-        api.defaults.headers.common.Authorization = `Bearer ${token}`;
-        const response = await api.patch(`/user/${decoded.sub}`, formData);
-        const newUser = { ...response.data, ...formData };
-        setUser(newUser);
-        setIsUpdateUserModalOpen(false);
-        toast.success("Perfil atualizado com sucesso");
-      } catch (error: any) {
-        if (error.response?.status === 409) {
-          toast.error("Username indisponível");
-        }
-      } finally {
-        setLoading(false);
-      }
-    }
-  };
-
-  const deleteUser = async (
-    setLoading: React.Dispatch<React.SetStateAction<boolean>>
-  ) => {
-    const token: string | null = localStorage.getItem("@address-list:token");
-
-    if (token) {
-      try {
-        setLoading(true);
-        const decoded = jwtDecode(token);
-        api.defaults.headers.common.Authorization = `Bearer ${token}`;
-        await api.delete(`/user/${decoded.sub}`);
-        toast.success("Sua conta foi deletada");
-        localStorage.removeItem("@address-list:token");
-        navigate("/");
-        setConfirmDeleteUser(false);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-  };
-
   return (
     <UserContext.Provider
       value={{
@@ -138,13 +86,7 @@ export const UserProvider = ({ children }: IChildren) => {
         userLogin,
         user,
         setUser,
-        deleteUser,
-        confirmDeleteUser,
-        setConfirmDeleteUser,
         isUserLogged,
-        updateUser,
-        isUpdateUserModalOpen,
-        setIsUpdateUserModalOpen,
         isMenuOpen,
         setIsMenuOpen,
       }}

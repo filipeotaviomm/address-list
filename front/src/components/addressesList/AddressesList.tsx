@@ -17,12 +17,17 @@ const AddressesList = () => {
           <CiCirclePlus size={30} style={{ color: "#291e82" }} />
         </button>
       </div>
-
-      <ul>
-        {addressesList.map((address: IAddress) => (
-          <AddressesCard key={address.id} address={address} />
-        ))}
-      </ul>
+      {addressesList.length > 0 ? (
+        <ul>
+          {addressesList.map((address: IAddress) => (
+            <AddressesCard key={address.id} address={address} />
+          ))}
+        </ul>
+      ) : (
+        <div className={styles.div_none_address}>
+          <p>Você ainda não tem endereço cadastrado</p>
+        </div>
+      )}
     </div>
   );
 };
