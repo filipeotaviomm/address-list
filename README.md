@@ -105,7 +105,8 @@ $ npm run dev
 ```
 
   <h4>6º Passo - Acesse a url no navegador</h4>
-    1. Copie a url gerada no terminal e a cole no navegador, em instantes a aplicação vai carregar, aí é só interagir com ela. A url gerada vai ser algo paarecido com isso:
+      1. Copie a url gerada no terminal e a cole no navegador, em instantes a aplicação vai carregar, aí é só interagir com ela. A url gerada vai ser algo paarecido com isso:
+      
 
 ```bash
 http://localhost:5173/
