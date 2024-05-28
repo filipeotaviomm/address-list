@@ -16,7 +16,7 @@
 
 ## 1. Sobre
 
-Esta é uma API de lista de contatos construída com NodeJS. Ela oferece funcionalidades avançadas de CRUD de usuários e CRUD de contatos vinculados aos respectivos usuários.
+Esta é uma API de uma lista de endereços construída em NodeJS. Ela oferece funcionalidades avançadas de CRUD de usuários e CRUD de contatos vinculados aos respectivos usuários.
 
 A API possui autenticação de usuário e permite que o mesmo crie, atualize e exclua seus contatos, tendo todos eles listados na página inicial. Também é possível que o usuário crie, atualize e exclua a sua conta.
 
