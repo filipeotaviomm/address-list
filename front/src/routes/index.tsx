@@ -10,8 +10,9 @@ const RoutesMain = () => {
       <Route path="/" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
 
-      <Route element={<PrivateRoutes />} />
-      <Route path="/dashboard" element={<DashboardPage />} />
+      <Route element={<PrivateRoutes />}>
+        <Route path="/dashboard" element={<DashboardPage />} />
+      </Route>
     </Routes>
   );
 };
